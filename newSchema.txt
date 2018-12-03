@@ -1,0 +1,62 @@
+drop table user;
+drop table contact;
+drop table reminder;
+drop table salary;
+
+
+
+CREATE TABLE `mayesha_database`.`User` (
+ `User_ID` INT NOT NULL , 
+`Category` VARCHAR(50) NOT NULL , 
+`First_Name` VARCHAR(50) NOT NULL , 
+`Last_Name` VARCHAR(50) NOT NULL ,
+ `Gender` VARCHAR(50) NOT NULL ,
+ `Company_Name` VARCHAR(50) NOT NULL , 
+`Job_Title` VARCHAR(50) NOT NULL ,
+ `Company_Address` VARCHAR(50) NOT NULL , 
+`City` VARCHAR(50) NOT NULL ,
+ `Country` VARCHAR(50) NOT NULL ,
+`Image` BLOB NOT NULL, 
+`Additional` VARCHAR(100) NOT NULL, PRIMARY KEY(`User_ID`) ) ENGINE = InnoDB;
+
+
+CREATE TABLE `mayesha_database`.`Contact` ( 
+`User_ID` INT(4) NOT NULL , 
+`Email_ID` VARCHAR(50) NOT NULL , 
+`Facebook_ID` VARCHAR(50) NOT NULL ,
+ `Phone_Number` INT(50) NOT NULL , 
+`Web_Page` VARCHAR(70) NOT NULL ) ENGINE = InnoDB;
+
+
+
+CREATE TABLE `mayesha_database`.`Reminder` ( 
+`User_ID` INT(4) NOT NULL , 
+`Title` TEXT NOT NULL , 
+ `Massage` VARCHAR(50) NOT NULL , 
+ `Date` CHAR(10) NOT NULL ) ENGINE = InnoDB;
+
+
+CREATE TABLE `mayesha_database`.`salary` ( 
+`User_ID` INT(4) NOT NULL ,  
+`salary` INT NOT NULL ) ENGINE = InnoDB;
+
+
+
+INSERT INTO `user`(`User_ID`, `Category`, `First_Name`, `Last_Name`, `Gender`, `Company_Name`, `Job_Title`, `Company_Address`, `City`, `Country`, `Additional`) VALUES ('1','Friend','Sayma','Ahmad','Female','Square Hospital','Doctor','Panthopath','Dhaka','Bangladesh','School Freind');
+
+
+INSERT INTO `user`(`User_ID`, `Category`, `First_Name`, `Last_Name`, `Gender`, `Company_Name`, `Job_Title`, `Company_Address`, `City`, `Country`, `Additional`) VALUES ('2','Neighbour','Momena','Hasan','Male','Ulab','Course Instructor','Dhanmondi','Dhaka','Bangladesh','A good teacher');
+
+
+INSERT INTO `user`(`User_ID`, `Category`, `First_Name`, `Last_Name`, `Gender`, `Company_Name`, `Job_Title`, `Company_Address`, `City`, `Country`, `Additional`) VALUES ('3','Classmate','Ahmad','Robin','Male','University of Florida','Student','Gainesville','Florida','USA','A  student');
+
+
+
+INSERT INTO `contact` (`User_ID`, `Email_ID`, `Facebook_ID`, `Phone_Number`, `Web_Page`) VALUES ('1', 'sayma@gmail', 'sayma ahmad', '800', 'https://google.com/intl/en_sg/products'), ('2', 'ahmad@gmail', 'ahmad robin', '338', 'http://www.javaxp.com/2014/04');
+
+
+
+INSERT INTO `reminder`(`User_ID`, `Title`, `Massage`, `Date`) VALUES ('1','Goto Aunt House','Happy new year','1/1/2017'),('2','Exam', 'You hae an Exam','1/12/17'),('3','Wish Ahmad','Happy birthday Ahmad','1/11/17');
+
+
+INSERT INTO `salary`(`User_ID`, `salary`) VALUES ('1','3456.876'),('2','452.87'),('3','98765.4');
